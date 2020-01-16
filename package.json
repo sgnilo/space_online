@@ -1,0 +1,22 @@
+{
+  "name": "space_online",
+  "version": "1.0.0",
+  "description": "a room you can use anywhere",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sgnilo/space_online.git"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "xujiangping",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sgnilo/space_online/issues"
+  },
+  "homepage": "https://github.com/sgnilo/space_online#readme"
+}
