@@ -1,0 +1,89 @@
+.lock-wrap{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    .lock-mask{
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        backdrop-filter: blur(5px);
+        animation: scaleLarge 4s infinite;
+        .top-lock-icon{
+            height: 15vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            animation: scaleUp 0.3s;
+            &>i{
+                animation-iteration-count: infinite;
+                animation-name: filcker;
+                animation-duration: 2s;
+            }
+        }
+        .date-view{
+            height: 140px;
+            width: 200px;
+            position: absolute;
+            left: 100px;
+            bottom: 100px;
+            font-family: Avenir;
+            color: #ffffff;
+            animation: scaleDown 0.3s;
+            .clock-block{
+                line-height: 80px;
+                font-size: 80px;
+                font-weight: lighter;
+            }
+            .date-block{
+                line-height: 60px;
+                font-size: 32px;
+            }
+        }
+    }
+}
+
+@keyframes filcker{
+    from{color: rgba(0, 0, 0, 1);}
+    50%{color: rgba(0, 0, 0, 0.3)}
+    to{color: rgba(0, 0, 0, 1)}
+}
+
+@keyframes scaleLarge {
+    from{
+        backdrop-filter: blur(10px);
+    }
+    50%{
+        backdrop-filter: blur(5px);
+    }
+    to{
+        backdrop-filter: blur(10px);
+    }
+}
+
+@keyframes scaleDown{
+    from{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes scaleUp{
+    from{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
