@@ -11,7 +11,7 @@
         top: 0px;
         left: 0px;
         backdrop-filter: blur(5px);
-        animation: scaleLarge 4s infinite;
+        //animation: scaleLarge 4s infinite;
         .top-lock-icon{
             height: 15vh;
             width: 100%;
@@ -43,6 +43,159 @@
             .date-block{
                 line-height: 60px;
                 font-size: 32px;
+            }
+        }
+    }
+    .lock-psd{
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(5px);
+        .user-input-block{
+            width: 300px;
+            min-height: 200px;
+            transition: all .3s;
+            overflow: hidden;
+            box-sizing: border-box;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            .default-user-info{
+                width: 195px;
+                margin-right: calc(100% - 195px);
+                min-height: 100px;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                .default-user-photo{
+                    height: 60px;
+                    width: 60px;
+                    border-radius: 30px;
+                    object-fit: cover;
+                    object-position: center;
+                }
+                .default-user-name{
+                    line-height: 30px;
+                    text-align: center;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: #090909;
+                }
+            }
+            .default-user-psd,.other-user-psd{
+                height: 40px;
+                line-height: 40px;
+                width: 100%;
+                i{
+                    border-radius: 4px;
+                    height: 40px;
+                    line-height: 40px;
+                    box-sizing: border-box;
+                    padding: 0 10px;
+                    font-size: 20px;
+                    color: #090909;
+                    margin-left: 10px;
+                    display: inline-block;
+                    cursor: pointer;
+                    vertical-align: top;
+                    &:hover{
+                        background-color: rgba(0, 0, 0, 0.3);
+                    }
+                }
+                .sign-input{
+                    display: inline-block;
+                    vertical-align: top;
+                    border-radius: 4px;
+                    background: rgba(0, 0, 0, 0.3);
+                    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3) inset;
+                    line-height: 38px;
+                    padding: 0 10px;
+                    width: 195px;
+                    box-sizing: border-box;
+                    color: rgba(250, 250, 250, 1);
+                    font-size: 14px;
+                    margin: 0px;
+                    border: 1px solid rgba(0, 0, 0, 0.3);
+                    &:focus{
+                        border: 1px solid rgba(0, 0, 0, 0.3);
+                        outline: none;
+                    }
+                    &::placeholder{
+                        color: #d2d2d2;
+                    }
+                }
+            }
+            .other-user-name{
+                width: 100%;;
+                .sign-input{
+                    display: inline-block;
+                    vertical-align: top;
+                    border-radius: 4px;
+                    background: rgba(0, 0, 0, 0.3);
+                    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3) inset;
+                    line-height: 38px;
+                    margin: 0px;
+                    padding: 0 10px;
+                    box-sizing: border-box;
+                    color: rgb(250, 250, 250);
+                    width: 195px;
+                    font-size: 14px;
+                    border: 1px solid rgba(0, 0, 0, 0.3);
+                    &:focus{
+                        border: 1px solid rgba(0, 0, 0, 0.3);
+                        outline: none;
+                    }
+                    &::placeholder{
+                        color: #d2d2d2;
+                    }
+                }
+            }
+            .other-user-psd{
+                animation: scaleUp 0.3s;
+            }
+        }
+        .other-btns{
+            height: 80px;
+            width: 100vw;
+            position: absolute;
+            bottom: 5vh;
+            left: 0px;
+            box-sizing: border-box;
+            padding: 0 30%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            .sign-btn{
+                height: 100%;
+                min-width: 80px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                i{
+                    color: rgba(255, 255, 255, 0.3);
+                    font-size: 26px;
+                    cursor: pointer;
+                    &:hover{
+                        color: rgba(255, 255, 255, 0.6);
+                    }
+                }
+                span{
+                    line-height: 30px;
+                    font-size: 14px;
+                    color: rgb(175, 175, 175);
+                }
             }
         }
     }
@@ -80,10 +233,63 @@
 @keyframes scaleUp{
     from{
         opacity: 0;
-        transform: translateY(100px);
+        transform: translateY(40px);
     }
     to{
         opacity: 1;
         transform: translateY(0px);
     }
+}
+
+.hola-enter, .hola-exit-done {
+    opacity: 0;
+}
+.hola-enter-active {
+    opacity: 1;
+    transition: all 0.3s;
+}
+.hola-enter-done, .hola-exit {
+    opacity: 1;
+}
+.hola-exit-active{
+    opacity: 0;
+    transition: all .3s;
+}
+
+.date-enter, .date-appear, .date-exit-done {
+    opacity: 0;
+    transform: translateY(20px);
+}
+.date-enter-actie, .date-appear-active {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 0.3s;
+}
+.date-enter-done, .date-exit {
+    transform: translateY(0px);
+    opacity: 1;
+}
+.date-exit-active{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all .3s;
+}
+
+.lockicon-enter, .lockicon-appear, .lockicon-exit-done {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+.lockicon-enter-actie, .lockicon-appear-active {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 0.3s;
+}
+.lockicon-enter-done, .lockicon-exit {
+    transform: translateY(0px);
+    opacity: 1;
+}
+.lockicon-exit-active{
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all .3s;
 }
